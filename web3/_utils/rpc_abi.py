@@ -43,6 +43,11 @@ class RPC:
     admin_startRPC = RPCEndpoint("admin_startRPC")
     admin_stopRPC = RPCEndpoint("admin_stopRPC")
 
+    # sei
+    eth_getBlockByNumber = RPCEndpoint("sei_getBlockByNumber")
+    eth_getLogs = RPCEndpoint("sei_getLogs")
+    eth_getTransactionReceipt = RPCEndpoint("sei_getTransactionReceipt")
+
     # eth
     eth_accounts = RPCEndpoint("eth_accounts")
     eth_blockNumber = RPCEndpoint("eth_blockNumber")
@@ -56,7 +61,7 @@ class RPC:
     eth_gasPrice = RPCEndpoint("eth_gasPrice")
     eth_getBalance = RPCEndpoint("eth_getBalance")
     eth_getBlockByHash = RPCEndpoint("eth_getBlockByHash")
-    eth_getBlockByNumber = RPCEndpoint("eth_getBlockByNumber")
+    # eth_getBlockByNumber = RPCEndpoint("eth_getBlockByNumber")
     eth_getBlockTransactionCountByHash = RPCEndpoint(
         "eth_getBlockTransactionCountByHash"
     )
@@ -66,7 +71,7 @@ class RPC:
     eth_getCode = RPCEndpoint("eth_getCode")
     eth_getFilterChanges = RPCEndpoint("eth_getFilterChanges")
     eth_getFilterLogs = RPCEndpoint("eth_getFilterLogs")
-    eth_getLogs = RPCEndpoint("eth_getLogs")
+    # eth_getLogs = RPCEndpoint("eth_getLogs")
     eth_getProof = RPCEndpoint("eth_getProof")
     eth_getRawTransactionByHash = RPCEndpoint("eth_getRawTransactionByHash")
     eth_getStorageAt = RPCEndpoint("eth_getStorageAt")
@@ -84,7 +89,8 @@ class RPC:
     )
     eth_getTransactionByHash = RPCEndpoint("eth_getTransactionByHash")
     eth_getTransactionCount = RPCEndpoint("eth_getTransactionCount")
-    eth_getTransactionReceipt = RPCEndpoint("eth_getTransactionReceipt")
+    # eth_getTransactionReceipt = RPCEndpoint("eth_getTransactionReceipt")
+    eth_getTransactionReceipt = RPCEndpoint("sei_getTransactionReceipt")
     eth_getUncleByBlockHashAndIndex = RPCEndpoint("eth_getUncleByBlockHashAndIndex")
     eth_getUncleByBlockNumberAndIndex = RPCEndpoint("eth_getUncleByBlockNumberAndIndex")
     eth_getUncleCountByBlockHash = RPCEndpoint("eth_getUncleCountByBlockHash")
@@ -191,6 +197,10 @@ TRACE_FILTER_PARAM_ABIS = {
 }
 
 RPC_ABIS: Dict[str, Union[Sequence[Any], Dict[str, str]]] = {
+    # sei
+    "sei_getLogs": FILTER_PARAMS_ABIS,
+    "sei_getTransactionReceipt": ["bytes32"],
+
     # eth
     "eth_call": TRANSACTION_PARAMS_ABIS,
     "eth_createAccessList": TRANSACTION_PARAMS_ABIS,
