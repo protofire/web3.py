@@ -90,7 +90,6 @@ class RPC:
     eth_getTransactionByHash = RPCEndpoint("eth_getTransactionByHash")
     eth_getTransactionCount = RPCEndpoint("eth_getTransactionCount")
     # eth_getTransactionReceipt = RPCEndpoint("eth_getTransactionReceipt")
-    eth_getTransactionReceipt = RPCEndpoint("sei_getTransactionReceipt")
     eth_getUncleByBlockHashAndIndex = RPCEndpoint("eth_getUncleByBlockHashAndIndex")
     eth_getUncleByBlockNumberAndIndex = RPCEndpoint("eth_getUncleByBlockNumberAndIndex")
     eth_getUncleCountByBlockHash = RPCEndpoint("eth_getUncleCountByBlockHash")
